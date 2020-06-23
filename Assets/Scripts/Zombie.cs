@@ -18,15 +18,11 @@ public class Zombie : MonoBehaviour
 
   public void GetHit()
   {
-    Debug.Log("OOF OUCHIE!");
     animator.SetTrigger("Die");
   }
 
   public void  OnDie()
   {
-    Debug.Log("DEAD");
-    Destroy(animator);
-    Destroy(GetComponent<BoxCollider>());
     Destroy(gameObject);
   }
 }

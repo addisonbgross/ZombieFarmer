@@ -75,12 +75,15 @@ public class PlayerController : MonoBehaviour
     {
       foreach (Collider overlap in Overlaps)
       {
-        if (overlap.tag == "Enemy")
+        if (overlap)
         {
-          Zombie zombie = overlap.GetComponent<Zombie>();
-          if (zombie)
+          if (overlap.tag == "Enemy")
           {
-            zombie.GetHit();
+            Zombie zombie = overlap.GetComponent<Zombie>();
+            if (zombie)
+            {
+              zombie.GetHit();
+            }
           }
         }
       }
@@ -93,10 +96,17 @@ public class PlayerController : MonoBehaviour
     {
       foreach (Collider overlap in Overlaps)
       {
-        if (overlap.tag == "Mound")
+        if (overlap)
         {
-          Debug.Log("ACTION: " + overlap.name);
-          animator.SetTrigger("Action");
+          if (overlap.tag == "Mound")
+          {
+            Mound mound = overlap.GetComponent<Mound>();
+            if (mound)
+            {
+              animator.SetTrigger("Action");
+              mound.AddSeed(SeedType.MuscleMelon);
+            }
+          }
         }
       }
     }
