@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
     Overlaps.Remove(obj);
   }
 
-  // Private
+  // private
 
   private void PerformAttack()
   {
@@ -117,8 +117,12 @@ public class PlayerController : MonoBehaviour
             Mound mound = overlap.GetComponent<Mound>();
             if (mound)
             {
-              animator.SetTrigger("Action");
-              mound.AddSeed(SeedType.MuscleMelon);
+              SeedType plantedSeed = seedSelector.PlantSeed();
+              if (plantedSeed != SeedType.None)
+              {
+                animator.SetTrigger("Action");
+                mound.AddSeed(plantedSeed);
+              }
             }
           }
         }

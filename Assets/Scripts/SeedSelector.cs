@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SeedSelector : MonoBehaviour
 {
   public SeedType currentSeed = SeedType.MuscleMelon;
 
   private GameObject[] seeds;
+  private int[] numSeeds;
 
   void Start()
   {
@@ -14,11 +16,22 @@ public class SeedSelector : MonoBehaviour
 
     // start with first seed selected
     SetActive(SeedType.MuscleMelon);
+
+    // start with 1 MuscleMelon
+    numSeeds = new int[] {1, 0, 0, 0};
+    SetSeedNum(SeedType.MuscleMelon, 1);
   }
 
-  void Update()
+  public SeedType PlantSeed()
   {
-      
+    int amount = int.Parse(seeds[(int)currentSeed - 1].transform.Find("Num").GetComponentInChildren<Text>().text);
+    if (amount > 0)
+    {
+      SetSeedNum(currentSeed, amount - 1);
+      return currentSeed;
+    }
+    
+    return SeedType.None;
   }
 
   public void NextSeed()
@@ -65,5 +78,10 @@ public class SeedSelector : MonoBehaviour
     {
       seed.SetActive(false);
     }
+  }
+
+  private void SetSeedNum(SeedType type, int amount)
+  {
+    seeds[(int)type - 1].transform.Find("Num").GetComponentInChildren<Text>().text = amount.ToString();
   }
 }
