@@ -20,8 +20,16 @@ public class Mound : MonoBehaviour
 
   void Update()
   {
+    // zombie has eaten the mound
+    if (seedType == SeedType.None && growTime > 0)
+    {
+      Debug.Log("MOUND GOT EATEN!");
+      growTime = 0;
+    }
+
     if (seedType != SeedType.None)
     {
+      // start growing
       if (growTime == 0)
       {
         Debug.Log("START GROWING");
@@ -33,8 +41,11 @@ public class Mound : MonoBehaviour
         growTime += Time.deltaTime;
         if (growTime >= endGrowTime)
         {
+          // growing complete
           Debug.Log("PLANT COMPLETE");
           seedType = SeedType.None;
+          growTime = 0;
+          // TODO reward
         }
       }
     }
