@@ -10,14 +10,27 @@ public class PlayerController : MonoBehaviour
   public Animator animator;
   public LayerMask layerMask;
   public HashSet<Collider> Overlaps;
+  public SeedSelector seedSelector;
 
   void Start()
   {
     Overlaps = new HashSet<Collider>();
+    seedSelector = transform.Find("SeedSelector").GetComponent<SeedSelector>();
   }
 
   void Update()
   {
+    // seed selection
+    if (Input.GetKeyDown(KeyCode.U))
+    {
+      seedSelector.PrevSeed();
+    }
+    else if (Input.GetKeyDown(KeyCode.I))
+    {
+      seedSelector.NextSeed();
+    }
+
+    // movement
     if (Input.GetKey(KeyCode.A))
     {
       animator.SetTrigger("Walk_Left");
@@ -36,6 +49,7 @@ public class PlayerController : MonoBehaviour
       speed = 0;
     }
 
+    // attack or interact
     if (Input.GetKeyDown(KeyCode.J))
     {
       if (isFacingLeft)
