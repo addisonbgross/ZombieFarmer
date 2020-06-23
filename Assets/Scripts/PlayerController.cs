@@ -73,12 +73,15 @@ public class PlayerController : MonoBehaviour
   {
     if (Overlaps.Count > 0)
     {
-      Debug.Log(Overlaps.Count);
       foreach (Collider overlap in Overlaps)
       {
         if (overlap.tag == "Enemy")
         {
-          Debug.Log("ATTACK: " + overlap.name);
+          Zombie zombie = overlap.GetComponent<Zombie>();
+          if (zombie)
+          {
+            zombie.GetHit();
+          }
         }
       }
     }
