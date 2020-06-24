@@ -141,6 +141,9 @@ public class PlayerController : MonoBehaviour
 
         Text scoreUI = GameObject.FindWithTag("Score").GetComponentInChildren<Text>();
         scoreUI.text = (int.Parse(scoreUI.text) + rewards[harvested]).ToString();
+
+        // prevent death
+        seedSelector.ResetHealth();
         return;
       }
 

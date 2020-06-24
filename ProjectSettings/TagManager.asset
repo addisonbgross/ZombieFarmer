@@ -9,6 +9,8 @@ TagManager:
   - SelectedSeed
   - Score
   - Seed
+  - Health
+  - DeadScreen
   layers:
   - Default
   - TransparentFX

@@ -10,9 +10,26 @@ public class SeedSelector : MonoBehaviour
   private GameObject[] seeds;
   private int[] numSeeds;
 
+  private GameObject healthUI;
+  private Transform ogHealth;
+  private float currentHealth;
+  private float healthDecay = 0.0005f;
+
+  private GameObject deadScreen;
+
   void Start()
   {
     seeds = GameObject.FindGameObjectsWithTag("SelectedSeed");
+
+    healthUI = GameObject.FindWithTag("Health");
+
+    GameObject empty = new GameObject();
+    ogHealth = empty.transform;
+    ogHealth.parent = healthUI.transform.parent;
+    ogHealth.localScale = healthUI.transform.localScale;
+    ogHealth.position = healthUI.transform.position;
+
+    deadScreen = GameObject.FindWithTag("DeadScreen");
 
     // start with first seed selected
     SetActive(SeedType.MuscleMelon);
@@ -22,6 +39,36 @@ public class SeedSelector : MonoBehaviour
 
     // start with 2 MuscleMelons
     SetSeedNum(SeedType.MuscleMelon, 2);
+  }
+
+  void Update()
+  {
+    Vector3 scale = healthUI.transform.localScale;
+    Vector3 position = healthUI.transform.position;
+    if (scale.x <= 0)
+    {
+      deadScreen.GetComponent<DeadScreen>().Show();
+      return;
+    }
+
+    healthUI.transform.localScale = new Vector3(
+        scale.x - healthDecay,
+        scale.y,
+        scale.z
+      );
+
+    healthUI.transform.position = new Vector3(
+        position.x - (healthDecay * 4f),
+        position.y,
+        position.z
+      );
+  }
+
+  public void ResetHealth()
+  {
+    Debug.Log("RESET HEATLH");
+    healthUI.transform.localScale = ogHealth.localScale;
+    healthUI.transform.position = ogHealth.position;
   }
 
   public void AddSeed(SeedType type)
