@@ -121,32 +121,41 @@ public class PlayerController : MonoBehaviour
     {
       foreach (Collider overlap in Overlaps)
       {
-        if (overlap)
+        if (overlap && overlap.tag == "Mound")
         {
-          if (overlap.tag == "Mound")
-          {
-            Mound mound = overlap.GetComponent<Mound>();
-            if (mound)
-            {
-              if (mound.isReadyToHarvest)
-              {
-                animator.SetTrigger("Action");
-                SeedType harvested = mound.GetHarvested();              
-
-                Text scoreUI = GameObject.FindWithTag("Score").GetComponentInChildren<Text>();
-                scoreUI.text = (int.Parse(scoreUI.text) + rewards[harvested]).ToString();
-                return;
-              }
-
-              SeedType plantedSeed = seedSelector.PlantSeed();
-              if (plantedSeed != SeedType.None)
-              {
-                animator.SetTrigger("Action");
-                mound.AddSeed(plantedSeed);
-              }
-            }
-          }
+          HandleMoundAction(overlap);
         }
+      }
+    }
+  }
+
+  private void HandleMoundAction(Collider overlap)
+  {
+    Mound mound = overlap.GetComponent<Mound>();
+    if (mound)
+    {
+      if (mound.isReadyToHarvest)
+      {
+        animator.SetTrigger("Action");
+        SeedType harvested = mound.GetHarvested();              
+
+        Text scoreUI = GameObject.FindWithTag("Score").GetComponentInChildren<Text>();
+        scoreUI.text = (int.Parse(scoreUI.text) + rewards[harvested]).ToString();
+        return;
+      }
+
+      if (mound.seedType != SeedType.None && mound.growTime > 0)
+      {
+        // seed is busy growing
+        return;
+      }
+
+      SeedType plantedSeed = seedSelector.PlantSeed();
+      if (plantedSeed != SeedType.None)
+      {
+        // plant new seed
+        animator.SetTrigger("Action");
+        mound.AddSeed(plantedSeed);
       }
     }
   }
