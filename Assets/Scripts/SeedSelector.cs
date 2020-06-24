@@ -20,7 +20,7 @@ public class SeedSelector : MonoBehaviour
     // 4 seed types
     numSeeds = new int[4];
 
-    // start with 1 MuscleMelon
+    // start with 2 MuscleMelons
     SetSeedNum(SeedType.MuscleMelon, 2);
   }
 
