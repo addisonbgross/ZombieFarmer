@@ -24,7 +24,7 @@ public class Spawner: MonoBehaviour
     {
       GameObject obj =
         Instantiate(
-          prefabToSpawn[Random.Range(0, prefabToSpawn.Length - 1)],
+          prefabToSpawn[Random.Range(0, prefabToSpawn.Length)],
           transform.position + new Vector3(0, 2, 0) + new Vector3(Random.Range(0, spawnRange), 0, 0),
           Quaternion.identity
         );

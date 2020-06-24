@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6780430010382843115}
   - component: {fileID: 6780430010382843114}
   m_Layer: 0
-  m_Name: SkinBean_Seed
+  m_Name: Brainapple_Seed
   m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3152915589974062465, guid: 1905565a2079e4ed1920824dae2747ce,
+  m_Sprite: {fileID: -9203191711016636576, guid: 8c5303dc24d1e42409990ea6fb3cbf62,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Animator:
   m_GameObject: {fileID: 6780430010382843111}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fdf7cf6db1b904d87874da6b332a2522, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8c6587c023cdf4b2597ff480c1030dd1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,4 +129,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9650d47c2653f41719b33464ea76a067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 2
+  type: 4

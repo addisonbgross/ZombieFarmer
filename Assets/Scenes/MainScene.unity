@@ -3100,7 +3100,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.2
+  m_Intensity: 0.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -3551,27 +3551,6 @@ PrefabInstance:
     - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: spawnRange
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: spawnTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: prefabToSpawn.Array.data[0]
-      value: 
-      objectReference: {fileID: 6780430010382843111, guid: fb447299070da4bf2bc3b62d3829dfee,
-        type: 3}
-    - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: spawnTimeRandom
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
