@@ -44,10 +44,9 @@ public class Zombie : MonoBehaviour
         if (eatTime >= END_EAT_TIME)
         {
           // eating complete
-          target.seedType = SeedType.None;
+          target.GetEaten();
           target = null;
           eatTime = 0;
-          Debug.Log("EATING COMPLETE");
         }
         else
         {
@@ -60,6 +59,7 @@ public class Zombie : MonoBehaviour
         // move towards target
         int dir = target.transform.position.x > transform.position.x ? 1 : -1;
         transform.position += new Vector3(dir * SPEED * Time.deltaTime, 0, 0);
+        eatTime = 0;
       }
     }
   }

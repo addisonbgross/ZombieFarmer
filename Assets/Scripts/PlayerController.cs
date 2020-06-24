@@ -117,6 +117,14 @@ public class PlayerController : MonoBehaviour
             Mound mound = overlap.GetComponent<Mound>();
             if (mound)
             {
+              if (mound.isReadyToHarvest)
+              {
+                animator.SetTrigger("Action");
+                SeedType harvested = mound.GetHarvested();              
+                Debug.Log("HARVESTED A : " + harvested.ToString());
+                return;
+              }
+
               SeedType plantedSeed = seedSelector.PlantSeed();
               if (plantedSeed != SeedType.None)
               {

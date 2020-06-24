@@ -7,48 +7,44 @@ public class Mound : MonoBehaviour
   public float growTime;
   public float endGrowTime;
   public SeedType seedType;
+  public bool isReadyToHarvest = false;
 
-  private float MuscleMelonGrowTime = 30.0f;
-  private float SkinBeanGrowTime = 25.0f;
-  private float LiverBerryGrowTime = 40.0f;
-  private float BrainappleGrowTime = 50.0f;
+  private Animator animator;
+
+  private float MuscleMelonGrowTime = 10.0f;
+  private float SkinBeanGrowTime = 20.0f;
+  private float LiverBerryGrowTime = 25.0f;
+  private float BrainappleGrowTime = 30.0f;
 
   void Start()
   {
-
+    animator = GetComponent<Animator>();
   }
 
   void Update()
   {
-    // zombie has eaten the mound
-    if (seedType == SeedType.None && growTime > 0)
+    if (isReadyToHarvest || seedType == SeedType.None)
     {
-      Debug.Log("MOUND GOT EATEN!");
-      growTime = 0;
+      return;
     }
 
-    if (seedType != SeedType.None)
+    // start growing
+    if (growTime == 0)
     {
-      // start growing
-      if (growTime == 0)
-      {
-        Debug.Log("START GROWING");
-        growTime += Time.deltaTime;
-      }
+      growTime += Time.deltaTime;
+    }
 
-      if (growTime > 0)
+    if (growTime > 0)
+    {
+      growTime += Time.deltaTime;
+      if (growTime >= endGrowTime)
       {
-        growTime += Time.deltaTime;
-        if (growTime >= endGrowTime)
-        {
-          // growing complete
-          Debug.Log("PLANT COMPLETE");
-          seedType = SeedType.None;
-          growTime = 0;
-          // TODO reward
-        }
+        isReadyToHarvest = true;
+        return;
       }
     }
+
+    animator.Play("Mound_Musclemelon", 0, growTime / endGrowTime);
   }
 
   public void AddSeed(SeedType type)
@@ -75,5 +71,21 @@ public class Mound : MonoBehaviour
         endGrowTime = BrainappleGrowTime;
       }
     }
+  }
+
+  public SeedType GetHarvested()
+  {
+    SeedType returnType = seedType;
+    seedType = SeedType.None;
+    growTime = 0;
+    animator.Play("Mound_Musclemelon", 0, 0);
+    return returnType;
+  }
+
+  public void GetEaten()
+  {
+    seedType = SeedType.None;
+    growTime = 0;
+    animator.Play("Mound_Musclemelon", 0, 0);
   }
 }
