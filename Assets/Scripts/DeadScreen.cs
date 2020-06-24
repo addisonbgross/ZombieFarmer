@@ -27,7 +27,6 @@ public class DeadScreen : MonoBehaviour
         SceneManager.LoadScene(0);
       }
     }
-      
   }
 
   public void Show()
