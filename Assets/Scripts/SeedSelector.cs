@@ -17,9 +17,11 @@ public class SeedSelector : MonoBehaviour
     // start with first seed selected
     SetActive(SeedType.MuscleMelon);
 
+    // 4 seed types
+    numSeeds = new int[4];
+
     // start with 1 MuscleMelon
-    numSeeds = new int[] {1, 0, 0, 0};
-    SetSeedNum(SeedType.MuscleMelon, 1);
+    SetSeedNum(SeedType.MuscleMelon, 2);
   }
 
   public SeedType PlantSeed()

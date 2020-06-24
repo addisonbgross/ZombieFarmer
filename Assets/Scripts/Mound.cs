@@ -51,7 +51,6 @@ public class Mound : MonoBehaviour
   {
     if (type != SeedType.None && seedType == SeedType.None)
     {
-      Debug.Log("PLANTED: " + type.ToString());
       seedType = type;
 
       if (type == SeedType.MuscleMelon)
@@ -78,6 +77,7 @@ public class Mound : MonoBehaviour
     SeedType returnType = seedType;
     seedType = SeedType.None;
     growTime = 0;
+    isReadyToHarvest = false;
     animator.Play("Mound_Musclemelon", 0, 0);
     return returnType;
   }

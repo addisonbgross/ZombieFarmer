@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,10 +13,20 @@ public class PlayerController : MonoBehaviour
   public HashSet<Collider> Overlaps;
   public SeedSelector seedSelector;
 
+  public Dictionary<SeedType, int> rewards;
+
   void Start()
   {
     Overlaps = new HashSet<Collider>();
     seedSelector = transform.Find("SeedSelector").GetComponent<SeedSelector>();
+    rewards = new Dictionary<SeedType, int>()
+    {
+      { SeedType.None, 0 },
+      { SeedType.MuscleMelon, 100 },
+      { SeedType.SkinBean, 500 },
+      { SeedType.LiverBerry, 2000 },
+      { SeedType.Brainapple, 7000 },
+    };
   }
 
   void Update()
@@ -121,7 +132,9 @@ public class PlayerController : MonoBehaviour
               {
                 animator.SetTrigger("Action");
                 SeedType harvested = mound.GetHarvested();              
-                Debug.Log("HARVESTED A : " + harvested.ToString());
+
+                Text scoreUI = GameObject.FindWithTag("Score").GetComponentInChildren<Text>();
+                scoreUI.text = (int.Parse(scoreUI.text) + rewards[harvested]).ToString();
                 return;
               }
 
