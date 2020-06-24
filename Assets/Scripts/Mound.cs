@@ -10,6 +10,7 @@ public class Mound : MonoBehaviour
   public bool isReadyToHarvest = false;
 
   private Animator animator;
+  private string currentSeedAnimation;
 
   private float MuscleMelonGrowTime = 10.0f;
   private float SkinBeanGrowTime = 20.0f;
@@ -19,6 +20,7 @@ public class Mound : MonoBehaviour
   void Start()
   {
     animator = GetComponent<Animator>();
+    currentSeedAnimation = "MuscleMelon_Plant";
   }
 
   void Update()
@@ -44,7 +46,7 @@ public class Mound : MonoBehaviour
       }
     }
 
-    animator.Play("MuscleMelon_Plant", 0, growTime / endGrowTime);
+    animator.Play(currentSeedAnimation, 0, growTime / endGrowTime);
   }
 
   public void AddSeed(SeedType type)
@@ -56,10 +58,12 @@ public class Mound : MonoBehaviour
       if (type == SeedType.MuscleMelon)
       {
         endGrowTime = MuscleMelonGrowTime;
+        currentSeedAnimation = "MuscleMelon_Plant";
       }
       else if (type == SeedType.SkinBean)
       {
         endGrowTime = SkinBeanGrowTime;
+        currentSeedAnimation = "SkinBean_Plant";
       }
       else if (type == SeedType.LiverBerry)
       {
@@ -78,7 +82,7 @@ public class Mound : MonoBehaviour
     seedType = SeedType.None;
     growTime = 0;
     isReadyToHarvest = false;
-    animator.Play("MuscleMelon_Plant", 0, 0);
+    animator.Play(currentSeedAnimation, 0, 0);
     return returnType;
   }
 
@@ -86,6 +90,6 @@ public class Mound : MonoBehaviour
   {
     seedType = SeedType.None;
     growTime = 0;
-    animator.Play("MuscleMelon_Plant", 0, 0);
+    animator.Play(currentSeedAnimation, 0, 0);
   }
 }
