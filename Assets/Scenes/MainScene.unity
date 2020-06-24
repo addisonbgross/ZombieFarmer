@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.0002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -2562,6 +2562,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a438959dd0ed419fada80983172bf2b, type: 3}
 --- !u!1 &1192694084
@@ -2737,6 +2742,80 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1259349467
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9027978357125437048, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 101.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2042861
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437052, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_Name
+      value: ZombieSpawner (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4a438959dd0ed419fada80983172bf2b, type: 3}
 --- !u!1 &1330415950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,13 +3144,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427160825}
-  m_LocalRotation: {x: 0.45536882, y: -0.18345577, z: 0.14620444, w: 0.8588409}
+  m_LocalRotation: {x: 0.5752779, y: -0.2027453, z: 0.11800913, w: 0.7835966}
   m_LocalPosition: {x: -37.5, y: -2.1, z: -16.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 56.702003, y: -19.357, z: 8.807}
+  m_LocalEulerAnglesHint: {x: 71.700005, y: -35.416, z: -8.853001}
 --- !u!1001 &1499284492
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5015,81 +5094,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1828061320766981063
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 599626444202161761, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_Name
-      value: ZombieSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -105.46
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 599626444202161766, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
-        type: 3}
-      propertyPath: prefabToSpawn
-      value: 
-      objectReference: {fileID: 3362153923130589603, guid: 1427011b514fa4da89f8e421a83754f0,
-        type: 3}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 028029819011c44e6a7ec9d3009833f1, type: 3}
 --- !u!1001 &2174975856680745037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5190,17 +5194,17 @@ PrefabInstance:
     - target: {fileID: 2174975857048944690, guid: c3ccf6d40e6fd4aceacbf73becf95640,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.56078434
+      value: 0.26913482
       objectReference: {fileID: 0}
     - target: {fileID: 2174975857048944690, guid: c3ccf6d40e6fd4aceacbf73becf95640,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.21960784
+      value: 0.19999999
       objectReference: {fileID: 0}
     - target: {fileID: 2174975857048944690, guid: c3ccf6d40e6fd4aceacbf73becf95640,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.2
+      value: 0.56078434
       objectReference: {fileID: 0}
     - target: {fileID: 2174975857048944690, guid: c3ccf6d40e6fd4aceacbf73becf95640,
         type: 3}
