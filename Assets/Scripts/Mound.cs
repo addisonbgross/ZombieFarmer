@@ -44,7 +44,7 @@ public class Mound : MonoBehaviour
       }
     }
 
-    animator.Play("Mound_Musclemelon", 0, growTime / endGrowTime);
+    animator.Play("MuscleMelon_Plant", 0, growTime / endGrowTime);
   }
 
   public void AddSeed(SeedType type)
@@ -78,7 +78,7 @@ public class Mound : MonoBehaviour
     seedType = SeedType.None;
     growTime = 0;
     isReadyToHarvest = false;
-    animator.Play("Mound_Musclemelon", 0, 0);
+    animator.Play("MuscleMelon_Plant", 0, 0);
     return returnType;
   }
 
@@ -86,6 +86,6 @@ public class Mound : MonoBehaviour
   {
     seedType = SeedType.None;
     growTime = 0;
-    animator.Play("Mound_Musclemelon", 0, 0);
+    animator.Play("MuscleMelon_Plant", 0, 0);
   }
 }
