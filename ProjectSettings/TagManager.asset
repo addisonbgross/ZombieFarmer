@@ -8,6 +8,7 @@ TagManager:
   - Mound
   - SelectedSeed
   - Score
+  - Seed
   layers:
   - Default
   - TransparentFX

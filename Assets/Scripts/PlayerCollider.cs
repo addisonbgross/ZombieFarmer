@@ -17,6 +17,16 @@ public class PlayerCollider : MonoBehaviour
     {
       Parent.AddOverlap(other);
     }
+
+    if (other.tag == "Seed")
+    {
+      Seed seed = other.GetComponent<Seed>();
+      if (seed)
+      {
+        Parent.seedSelector.AddSeed(seed.type);
+        seed.PickUp();
+      }
+    }
   }
 
   void OnTriggerExit(Collider other)

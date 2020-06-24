@@ -24,6 +24,12 @@ public class SeedSelector : MonoBehaviour
     SetSeedNum(SeedType.MuscleMelon, 2);
   }
 
+  public void AddSeed(SeedType type)
+  {
+    int amount = int.Parse(seeds[(int)type - 1].transform.Find("Num").GetComponentInChildren<Text>().text);
+    SetSeedNum(type, amount + 1);
+  }
+
   public SeedType PlantSeed()
   {
     int amount = int.Parse(seeds[(int)currentSeed - 1].transform.Find("Num").GetComponentInChildren<Text>().text);
