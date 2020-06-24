@@ -3561,7 +3561,7 @@ PrefabInstance:
     - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
         type: 3}
       propertyPath: spawnTime
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
         type: 3}
@@ -3569,6 +3569,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6780430010382843111, guid: fb447299070da4bf2bc3b62d3829dfee,
         type: 3}
+    - target: {fileID: 4912755779926852948, guid: 028029819011c44e6a7ec9d3009833f1,
+        type: 3}
+      propertyPath: spawnTimeRandom
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 028029819011c44e6a7ec9d3009833f1, type: 3}
 --- !u!1 &1782963065
