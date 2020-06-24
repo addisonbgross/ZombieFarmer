@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6780430010382843115}
   - component: {fileID: 6780430010382843114}
   m_Layer: 0
-  m_Name: Seed
+  m_Name: MuscleMelon_Seed
   m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3820782088901394709, guid: 06be716faf62749d6937c59245d33bd5,
+  m_Sprite: {fileID: 3152915589974062465, guid: 1905565a2079e4ed1920824dae2747ce,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

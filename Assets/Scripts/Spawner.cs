@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner: MonoBehaviour 
 {
-  public GameObject prefabToSpawn;
+  public GameObject[] prefabToSpawn;
   public float spawnTime;
   public float spawnTimeRandom;
   public float spawnRange;
@@ -24,7 +24,7 @@ public class Spawner: MonoBehaviour
     {
       GameObject obj =
         Instantiate(
-          prefabToSpawn,
+          prefabToSpawn[Random.Range(0, prefabToSpawn.Length - 1)],
           transform.position + new Vector3(0, 2, 0) + new Vector3(Random.Range(0, spawnRange), 0, 0),
           Quaternion.identity
         );
