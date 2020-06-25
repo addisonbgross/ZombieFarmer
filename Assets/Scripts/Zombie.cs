@@ -43,6 +43,11 @@ public class Zombie : MonoBehaviour
       float distance = Vector3.Distance(target.transform.position, transform.position);
       if (distance <= EATING_DISTANCE)
       {
+        if (eatTime == 0)
+        {
+          animator.SetTrigger("Eat");
+        }
+
         if (target.tag == "Mound")
         {
           if (eatTime >= END_EAT_TIME)
@@ -51,6 +56,8 @@ public class Zombie : MonoBehaviour
             target.GetComponent<Mound>().GetEaten();
             target = null;
             eatTime = 0;
+            animator.ResetTrigger("Eat");
+            animator.SetTrigger("Idle_Left");
           }
           else
           {
