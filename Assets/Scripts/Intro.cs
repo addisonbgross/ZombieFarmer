@@ -5,7 +5,7 @@ using UnityEngine;
 public class Intro : MonoBehaviour
 {
   public float showTime;
-  public float maxShowTime = 8.0f;
+  public float maxShowTime = 10.0f;
 
   void Update()
   {
