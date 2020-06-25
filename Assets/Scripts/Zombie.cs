@@ -35,6 +35,7 @@ public class Zombie : MonoBehaviour
       target = FindMound();
       if (!target)
       {
+        animator.ResetTrigger("Eat");
         target = player;
       }
     }
