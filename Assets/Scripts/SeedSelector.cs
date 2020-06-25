@@ -13,7 +13,7 @@ public class SeedSelector : MonoBehaviour
   private GameObject healthUI;
   private Transform ogHealth;
   private float currentHealth;
-  private float healthDecay = 0.0005f;
+  private float healthDecay = 0.00025f;
 
   private GameObject deadScreen;
   private PlayerController Parent;
