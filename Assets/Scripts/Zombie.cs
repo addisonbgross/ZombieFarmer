@@ -35,7 +35,6 @@ public class Zombie : MonoBehaviour
       target = FindMound();
       if (!target)
       {
-        animator.ResetTrigger("Eat");
         target = player;
       }
     }
@@ -44,13 +43,17 @@ public class Zombie : MonoBehaviour
       float distance = Vector3.Distance(target.transform.position, transform.position);
       if (distance <= EATING_DISTANCE)
       {
-        if (eatTime == 0)
-        {
-          animator.SetTrigger("Eat");
-        }
-
         if (target.tag == "Mound")
         {
+          Mound mound = target.GetComponent<Mound>();
+          if (mound.seedType == SeedType.None)
+          {
+            // mound was empty on arrival
+            animator.ResetTrigger("Eat");
+            target = null;
+            return;
+          }
+
           if (eatTime >= END_EAT_TIME)
           {
             // eating complete
@@ -64,20 +67,20 @@ public class Zombie : MonoBehaviour
           {
             // continue eating
             eatTime += Time.deltaTime;
+            animator.SetTrigger("Eat");
           }
         }
         else
         {
           // check for new plants before continuing to chase player
-          GameObject newMound = FindMound();
-          if (newMound)
-          {
-            target = newMound;
-          }
+          target = FindMound();
+          animator.ResetTrigger("Eat");
         }
       }
       else
       {
+        animator.ResetTrigger("Eat");
+
         // move towards target
         int dir = target.transform.position.x > transform.position.x ? 1 : -1;
         if (dir > 0)
@@ -100,7 +103,7 @@ public class Zombie : MonoBehaviour
     isDying = true;
   }
 
-  public void  OnDie()
+  public void OnDie()
   {
     Destroy(gameObject);
   }
@@ -109,11 +112,13 @@ public class Zombie : MonoBehaviour
 
   private GameObject FindMound()
   {
-    foreach (Mound mound in mounds)
+    // go and eat a random mound
+    for (int i = 0; i < mounds.Length - 1; ++i)
     {
-      if (mound.seedType != SeedType.None)
+      int current = Random.Range(0, mounds.Length);
+      if (mounds[current].seedType != SeedType.None)
       {
-        return mound.gameObject;
+        return mounds[current].gameObject;
       }
     }
 
