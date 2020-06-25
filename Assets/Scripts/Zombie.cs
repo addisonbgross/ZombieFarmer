@@ -8,6 +8,8 @@ public class Zombie : MonoBehaviour
   public GameObject target;
   public float speed = 2.5f;
 
+  public AudioSource[] audioData;
+
   private Mound[] mounds;
   private GameObject player;
 
@@ -16,9 +18,11 @@ public class Zombie : MonoBehaviour
 
   private float END_EAT_TIME = 3.0f;
   private float EATING_DISTANCE = 2.0f;
+  private float HIT_DELAY = 0.3f;
 
   void Start()
   {
+    audioData = GetComponents<AudioSource>();
     mounds = FindObjectsOfType<Mound>();
     player = GameObject.FindWithTag("Player");
   }
@@ -99,8 +103,12 @@ public class Zombie : MonoBehaviour
 
   public void GetHit()
   {
-    animator.SetTrigger("Die");
-    isDying = true;
+    if (!isDying)
+    {
+      animator.SetTrigger("Die");
+      StartCoroutine(PlayHitSound());
+      isDying = true;
+    }
   }
 
   public void OnDie()
@@ -109,6 +117,17 @@ public class Zombie : MonoBehaviour
   }
 
   // private
+
+  private IEnumerator PlayHitSound()
+  {
+    yield return new WaitForSeconds(HIT_DELAY);
+    var rand = Random.Range(0, audioData.Length);
+    var source = audioData[rand];
+    if (!source.isPlaying)
+    {
+      source.Play(0);
+    }
+  }
 
   private GameObject FindMound()
   {
