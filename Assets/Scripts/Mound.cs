@@ -68,6 +68,7 @@ public class Mound : MonoBehaviour
       else if (type == SeedType.LiverBerry)
       {
         endGrowTime = LiverBerryGrowTime;
+        currentSeedAnimation = "LiverBerry_Plant";
       }
       else if (type == SeedType.Brainapple)
       {
