@@ -51,7 +51,6 @@ public class MoreZombies : MonoBehaviour
           }
 
           spawner.spawnTime *= spawnWaitIncrease;
-          Debug.Log(spawner.spawnTime);
         }
       }
 

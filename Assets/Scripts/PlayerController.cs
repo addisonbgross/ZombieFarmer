@@ -145,6 +145,7 @@ public class PlayerController : MonoBehaviour
       {
         animator.SetTrigger("Action");
         SeedType harvested = mound.GetHarvested();              
+        Debug.Log(harvested);
 
         Text scoreUI = GameObject.FindWithTag("Score").GetComponentInChildren<Text>();
         scoreUI.text = (int.Parse(scoreUI.text) + rewards[harvested]).ToString();
