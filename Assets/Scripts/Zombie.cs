@@ -72,6 +72,14 @@ public class Zombie : MonoBehaviour
       {
         // move towards target
         int dir = target.transform.position.x > transform.position.x ? 1 : -1;
+        if (dir > 0)
+        {
+          animator.SetTrigger("Idle_Right");
+        }
+        else
+        {
+          animator.SetTrigger("Idle_Left");
+        }
         transform.position += new Vector3(dir * speed * Time.deltaTime, 0, 0);
         eatTime = 0;
       }

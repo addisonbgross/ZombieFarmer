@@ -2573,6 +2573,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a438959dd0ed419fada80983172bf2b, type: 3}
 --- !u!1 &1192694084
@@ -2774,7 +2779,7 @@ PrefabInstance:
     - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2042861
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9027978357125437051, guid: 4a438959dd0ed419fada80983172bf2b,
         type: 3}
@@ -2840,12 +2845,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie
       objectReference: {fileID: 0}
-    - target: {fileID: 3362153923130589612, guid: 1427011b514fa4da89f8e421a83754f0,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8883679030932355929, guid: 5b8d420cb973d45eb98d2f3dcba58dce,
-        type: 3}
     - target: {fileID: 3362153923130589613, guid: 1427011b514fa4da89f8e421a83754f0,
         type: 3}
       propertyPath: m_LocalPosition.x
