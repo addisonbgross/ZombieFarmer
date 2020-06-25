@@ -5,12 +5,14 @@ using UnityEngine;
 public class Seed : MonoBehaviour
 {
   public SeedType type = SeedType.MuscleMelon;
+  public AudioSource audioData;
 
   private Animator animator;
   private bool isPickedUp;
 
   void Start()
   {
+    audioData = GetComponent<AudioSource>();
     animator = GetComponent<Animator>();
     animator.enabled = false;
   }
@@ -30,6 +32,7 @@ public class Seed : MonoBehaviour
       return SeedType.None;
     }
 
+    audioData.Play(0);
     animator.enabled = true;
     isPickedUp = true;
     return type;
