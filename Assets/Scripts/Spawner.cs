@@ -10,6 +10,8 @@ public class Spawner: MonoBehaviour
   public float spawnRange;
   public float defaultSpeed = 2.5f;
 
+  public bool isEnabled;
+
   private float spawnTimer;
 
   void Start () 
@@ -19,6 +21,11 @@ public class Spawner: MonoBehaviour
 
   void Update () 
   {
+    if (!isEnabled)
+    {
+      return;
+    }
+
     spawnTimer -= Time.deltaTime;
     if (spawnTimer <= 0.0f)
     {
