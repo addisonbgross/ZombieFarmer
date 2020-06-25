@@ -16,6 +16,7 @@ public class SeedSelector : MonoBehaviour
   private float healthDecay = 0.0005f;
 
   private GameObject deadScreen;
+  private PlayerController Parent;
 
   void Start()
   {
@@ -30,6 +31,7 @@ public class SeedSelector : MonoBehaviour
     ogHealth.position = healthUI.transform.position;
 
     deadScreen = GameObject.FindWithTag("DeadScreen");
+    Parent = transform.parent.GetComponent<PlayerController>(); 
 
     // start with first seed selected
     SetActive(SeedType.MuscleMelon);
@@ -43,12 +45,12 @@ public class SeedSelector : MonoBehaviour
 
   void Update()
   {
-    return;
     Vector3 scale = healthUI.transform.localScale;
     Vector3 position = healthUI.transform.position;
     if (scale.x <= 0)
     {
       deadScreen.GetComponent<DeadScreen>().Show();
+      Parent.StopTheme();
       return;
     }
 

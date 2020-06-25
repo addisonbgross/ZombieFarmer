@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
   public SeedSelector seedSelector;
 
   public Dictionary<SeedType, int> rewards;
+  public AudioSource audioData;
 
   void Start()
   {
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
       { SeedType.LiverBerry, 2000 },
       { SeedType.Brainapple, 7000 },
     };
+    audioData = GetComponent<AudioSource>();
   }
 
   void Update()
@@ -90,6 +92,11 @@ public class PlayerController : MonoBehaviour
   public void RemoveOverlap(Collider obj)
   {
     Overlaps.Remove(obj);
+  }
+
+  public void StopTheme()
+  {
+    audioData.Stop();
   }
 
   // private
