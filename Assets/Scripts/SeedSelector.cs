@@ -43,6 +43,7 @@ public class SeedSelector : MonoBehaviour
 
   void Update()
   {
+    return;
     Vector3 scale = healthUI.transform.localScale;
     Vector3 position = healthUI.transform.position;
     if (scale.x <= 0)
@@ -66,7 +67,6 @@ public class SeedSelector : MonoBehaviour
 
   public void ResetHealth()
   {
-    Debug.Log("RESET HEATLH");
     healthUI.transform.localScale = ogHealth.localScale;
     healthUI.transform.position = ogHealth.position;
   }

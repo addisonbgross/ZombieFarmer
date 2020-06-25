@@ -73,6 +73,7 @@ public class Mound : MonoBehaviour
       else if (type == SeedType.Brainapple)
       {
         endGrowTime = BrainappleGrowTime;
+        currentSeedAnimation = "Brainapple_Plant";
       }
     }
   }
