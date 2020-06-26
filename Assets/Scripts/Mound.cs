@@ -15,7 +15,7 @@ public class Mound : MonoBehaviour
   private float MuscleMelonGrowTime = 10.0f;
   private float SkinBeanGrowTime = 20.0f;
   private float LiverBerryGrowTime = 25.0f;
-  private float BrainappleGrowTime = 30.0f;
+  private float BrainappleGrowTime = 35.0f;
 
   void Start()
   {
@@ -38,8 +38,10 @@ public class Mound : MonoBehaviour
 
     if (growTime > 0)
     {
+      //Debug.Log(growTime);
+      //Debug.Log("MAX: " + endGrowTime * 0.9f);
       growTime += Time.deltaTime;
-      if (growTime >= endGrowTime)
+      if (growTime > (endGrowTime * 0.84f)) // be harvestable at start of last frame
       {
         isReadyToHarvest = true;
         return;

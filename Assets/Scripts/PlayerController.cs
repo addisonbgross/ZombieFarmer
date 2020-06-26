@@ -24,9 +24,9 @@ public class PlayerController : MonoBehaviour
     {
       { SeedType.None, 0 },
       { SeedType.MuscleMelon, 100 },
-      { SeedType.SkinBean, 500 },
-      { SeedType.LiverBerry, 2000 },
-      { SeedType.Brainapple, 7000 },
+      { SeedType.SkinBean, 1000 },
+      { SeedType.LiverBerry, 5000 },
+      { SeedType.Brainapple, 10000 },
     };
     audioData = GetComponent<AudioSource>();
   }
@@ -48,13 +48,13 @@ public class PlayerController : MonoBehaviour
     {
       animator.SetTrigger("Walk_Left");
       isFacingLeft = true;
-      speed = -20.0f;
+      speed = -30.0f;
     }
     else if (Input.GetKey(KeyCode.D))
     {
       animator.SetTrigger("Walk_Right");
       isFacingLeft = false;
-      speed = 20.0f;
+      speed = 30.0f;
     }
     else if (!Input.anyKey)
     {

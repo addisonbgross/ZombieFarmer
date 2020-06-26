@@ -99,8 +99,8 @@ MonoBehaviour:
   - {fileID: 6780430010382843111, guid: 8f3ae293b7c964af9a21dac91ca69705, type: 3}
   - {fileID: 6780430010382843111, guid: 4064ffe6cde4a4666b6070710706993e, type: 3}
   - {fileID: 6780430010382843111, guid: c8c6fd1be00b944bba71ed39f86824a4, type: 3}
-  spawnTime: 8
-  spawnTimeRandom: 1
+  spawnTime: 5
+  spawnTimeRandom: 2
   spawnRange: 75
   defaultSpeed: 2.5
   isEnabled: 1
